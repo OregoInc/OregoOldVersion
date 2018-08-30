@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.anton.oregov1.activity.MainActivity;
 import com.example.anton.oregov1.activity.face3dActivity.model3D.view.ModelActivity;
 import com.example.anton.oregov1.fragment.CameraFragment;
 import com.example.anton.oregov1.fragment.OregoGalleryFragment;
@@ -84,6 +85,13 @@ public class CameraActivity extends Activity implements CameraView.CameraListene
         b.putInt("countModel", CameraFragment.getCount() - 1);
         b.putString("model", "null");
         intent.putExtras(b);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

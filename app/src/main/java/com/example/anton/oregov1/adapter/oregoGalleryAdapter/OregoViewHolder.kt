@@ -32,8 +32,8 @@ class OregoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.
     override fun onClick(view: View) {
         val position = adapterPosition
         if (position != RecyclerView.NO_POSITION) {
-            val oregoPhoto = OregoPhotoManager.getSpacePhotos()[position]
-            val intent = Intent(OregoGalleryFragment.INIT.getTHIS()!!.context, ModelActivity::class.java)
+            OregoPhotoManager.getSpacePhotos()[position]
+            val intent = Intent(OregoGalleryFragment.getTHIS()!!.context, ModelActivity::class.java)
             val b = Bundle()
             b.putInt("countModel", position)
             b.putString("model", "null")

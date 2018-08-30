@@ -1,11 +1,12 @@
 package com.example.anton.oregov1.activity.oregoPhotoManagement
 
 import android.os.Environment
+import com.example.anton.oregov1.activity.MainActivity
 import java.io.File
 
 object OregoPhotoManager {
 
-    private val file: File = File(Environment.getExternalStorageDirectory(), "/OREGO")
+    private val file: File = File(MainActivity.THIS.baseContext.cacheDir, "/OREGO")
 
 
     private val oregoPhotoList = mutableListOf<OregoPhoto>()

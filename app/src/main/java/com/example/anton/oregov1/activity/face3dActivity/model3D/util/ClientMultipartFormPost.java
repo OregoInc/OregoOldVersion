@@ -17,9 +17,7 @@ import java.util.zip.ZipInputStream;
 public class ClientMultipartFormPost {
 
     public static File sendFile(File dir) throws IOException {
-        String charset = "UTF-8";
         URL url = new URL("https://face.spbpu.com/servletpost/");
-        File file = new File(dir, "result.jpg");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");
         con.setUseCaches(false);
@@ -27,6 +25,7 @@ public class ClientMultipartFormPost {
         con.setDoInput(true);
         con.addRequestProperty("3dfacePOST", "3dfacePOST");
         con.connect();
+        File file = new File(dir, "result.jpg");
         BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
         BufferedOutputStream bos = new BufferedOutputStream(con.getOutputStream());
         byte[] byteArray = new byte[1];

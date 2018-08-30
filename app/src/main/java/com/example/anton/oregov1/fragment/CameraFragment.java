@@ -44,7 +44,7 @@ public class CameraFragment extends Fragment {
         buttonCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final File orego = new File(Environment.getExternalStorageDirectory(), "/OREGO");
+                final File orego = new File(getActivity().getBaseContext().getCacheDir(), "/OREGO");
                 if (!orego.exists()) orego.mkdir();
                 directoryPhoto = new File(orego, "directory" + count);
                 if (!directoryPhoto.exists()) directoryPhoto.mkdir();

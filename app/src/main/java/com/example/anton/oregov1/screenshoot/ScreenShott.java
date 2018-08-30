@@ -127,7 +127,7 @@ public class ScreenShott {
 
     private File getOutputMediaFile(String filename) {
         // To be safe, you should check that the SDCard is mounted
-        // using Environment.getExternalStorageState() before doing this.
+        // using getCacheDir() before doing this.
         File mediaStorageDirectory = new File(new File(Environment.getExternalStorageDirectory(), "/OREGO")
                 , "/directory" + (CameraFragment.getCount() - 1));
         // Create the storage directory if it does not exist
